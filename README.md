@@ -1,32 +1,18 @@
-# Platformatic Runtime API
+# Multipart Bug
 
-This is a generated [Platformatic Runtime](https://docs.platformatic.dev/docs/runtime/overview) application.
+This is a Platformatic Runtime application that has a Composer and a Service,
+named `composer` and `service`.
 
-## Requirements
+`service` exposes a multipart route as `/upload`. `composer` exposes that route:
 
-Platformatic supports macOS, Linux and Windows ([WSL](https://docs.microsoft.com/windows/wsl/) recommended).
-You'll need to have [Node.js](https://nodejs.org/) >= v18.8.0 or >= v20.6.0
+* via reverse proxy as `/proxy/upload`
+* via OpenAPI composition as `/service/upload`.
 
-## Setup
+Currently the `OpenAPI` composition exposes this incorrectly and it remaps the type
+from `multipart/form-data` to `application/json`.
 
-1. Install dependencies:
+A failing client demonstrating this is available at `test.mjs`, to use:
 
-```bash
-npm install
-```
-
-## Usage
-
-Run the API with:
-
-```bash
-npm start
-```
-
-## Adding a Service
-
-Adding a new service to this project is as simple as running `create-platformatic` again, like so:
-
-```
-npx create-platformatic
-```
+1. `npm install`
+2. `npm start`
+3. `node test.mjs` (in another window)

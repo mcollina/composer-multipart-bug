@@ -8,6 +8,12 @@
           "url": "/documentation/json",
           "prefix": "/service"
         }
+      },
+      {
+        "id": "service",
+        "proxy": {
+          "prefix": "/foo"
+        }
       }
     ],
     "refreshTimeout": 1000

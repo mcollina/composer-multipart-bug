@@ -5,6 +5,12 @@
   },
   "watch": true,
   "plugins": {
+    "packages": [{
+      "name": "@fastify/multipart",
+      "options": {
+        "attachFieldsToBody": true
+      }
+    }],
     "paths": [
       {
         "path": "./plugins",
