@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.platformatic.dev/@platformatic/composer/2.7.0.json",
+  "composer": {
+    "services": [
+      {
+        "id": "service",
+        "openapi": {
+          "url": "/documentation/json",
+          "prefix": "/service"
+        }
+      }
+    ],
+    "refreshTimeout": 1000
+  },
+  "watch": true
+}
